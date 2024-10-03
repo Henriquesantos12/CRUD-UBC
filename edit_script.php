@@ -8,25 +8,33 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
 
-    <title>Cadastro</title>
+    <title>Alterar Cadastro</title>
   </head>
   <body>
     <div class="container">
       <div class="row">
         <?php
           include "conexao.php";
-
+          $id = $_POST['id'];
           $nome = $_POST["nome"];
           $endereco = $_POST["endereco"];
           $telefone = $_POST["telefone"];  
           $email = $_POST["email"];
           $data_nascimento = $_POST["data_nascimento"];
 
-          $sql = "INSERT INTO `pessoas`(`nome`, `endereco`, `telefone`, `email`, `data_nascimento`) 
-                  VALUES ('$nome', '$endereco', '$telefone', '$email', '$data_nascimento')";
+      //    $sql = "INSERT INTO `pessoas`(`nome`, `endereco`, `telefone`, `email`, `data_nascimento`) 
+     //            VALUES ('$nome', '$endereco', '$telefone', '$email', '$data_nascimento')";
+
+     $sql = "UPDATE `pessoas` 
+     SET `nome` = '$nome', 
+         `endereco` = '$endereco', 
+         `telefone` = '$telefone', 
+         `email` = '$email', 
+         `data_nascimento` = '$data_nascimento' 
+     WHERE `cod_pessoa` = $id";
 
           if (mysqli_query($conn, $sql)) {
-            mensagem("$nome foi cadastrado", 'success');
+            mensagem("$nome foi alterado", 'success');
           } else {
             mensagem("$nome não foi cadastrado", 'danger');
           }
@@ -37,5 +45,3 @@
     </div>
   </body>
 </html>
-
-

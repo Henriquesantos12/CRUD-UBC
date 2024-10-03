@@ -69,6 +69,7 @@
               <th scope="col">Telefone</th>
               <th scope="col">E-mail</th>
               <th scope="col">Data de Nascimento</th>
+              <th scope="col">Funções</th>
             </tr>
           </thead>
           <tbody>
@@ -86,6 +87,7 @@
                 $telefone = $linha['telefone'];
                 $email = $linha['email'];
                 $data_nascimento = $linha['data_nascimento'];
+                $data_nascimento = mostra_data($data_nascimento);
 
                 echo "<tr>
                         <th scope='row'>$nome</th>
@@ -93,6 +95,10 @@
                         <td>$telefone</td>
                         <td>$email</td>
                         <td>$data_nascimento</td>
+                        <td> <a href='cadastro_edit.php ?id=$cod_pessoa' class='btn btn-success'>Editar</a>
+                        <a href'#' class='btn btn-danger' data-toggle='modal' data-target='#confirma'>Excluir</a>
+                        </td>
+                        
                       </tr>";
               }
             ?>
@@ -101,7 +107,35 @@
       </div>
     </div>
 
+    <!-- Modal -->
+<div class="modal fade" id="confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmação de exclusão</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Deseja realmente excluir</p>
+        <p id="nome_pessoa">Nome da pessoas</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+        <button type="button" class="btn btn-danger">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- Optional JavaScript; Bootstrap Bundle with Popper -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  window.jQuery || document.write('<script src="/caminho-local/jquery-3.6.0.min.js"><\/script>')
+</script>
+
+
   </body>
 </html>

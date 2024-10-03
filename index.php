@@ -15,7 +15,7 @@
         align-items: center;
         height: 100vh; /* Altura da viewport inteira */
         margin: 0;
-        background-color: #f8f9fa; /* Cor de fundo opcional */
+        background-color: #f8f956; /* Cor de fundo opcional */
       }
 
       .container {

@@ -15,4 +15,10 @@
                 $texto
               </div>";
     }
+
+    function mostra_data ($d) {
+     $d = explode("-", $d);
+     $escreve = $d[2] . "/" .$d[1] . "/" .$d[0];
+     return $escreve;
+    } 
 ?>

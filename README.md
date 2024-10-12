@@ -19,13 +19,7 @@ Um sistema de **Cadastro de Usuários** (CRUD) em PHP que permite gerenciar info
 - **Bootstrap**: Framework CSS para design responsivo.
 - **HTML5/CSS3**: Estrutura e estilo da interface.
 
-![Formulário de cadastro ](../empresa/imagens%20github/forms%20de%20cadastro.png)
-
-
-![Pesquisar usuários ](../empresa/imagens%20github/pesquisar%20cadastro.png)
-
-
-![Modal de exclusão de usuários ](../empresa/imagens%20github/modal%20exclusao.png)
+(https://github.com/Henriquesantos12/CRUD-UBC/issues/1#issue-2583436293)
 
 
 ## 🚀 Como Instalar

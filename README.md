@@ -23,4 +23,4 @@ Um sistema de **Cadastro de Usuários** (CRUD) em PHP que permite gerenciar info
 
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/yourusername/yourprojectname.git
+   git clone https://github.com/yourusername/CRUD-UBC.git

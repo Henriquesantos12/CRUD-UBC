@@ -15,7 +15,7 @@
         align-items: center;
         height: 100vh; /* Altura da viewport inteira */
         margin: 0;
-        background-color: #f8f9fa; /* Cor de fundo opcional */
+        background-color: silver; /* Cor de fundo opcional */
       }
 
       .container {
@@ -54,7 +54,8 @@
         <nav>
           <form class="form-inline my-2 my-lg-0" action="pesquisar.php" method="POST">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="busca">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <hr>
+            <button class="btn btn-primary" type="submit">Search</button>
             <a href="index.php" class="btn btn-primary">Voltar</a>
           </form>
         </nav>
@@ -96,46 +97,53 @@
                         <td>$email</td>
                         <td>$data_nascimento</td>
                         <td> <a href='cadastro_edit.php ?id=$cod_pessoa' class='btn btn-success'>Editar</a>
-                        <a href'#' class='btn btn-danger' data-toggle='modal' data-target='#confirma'>Excluir</a>
+                        <a href'#' class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#confirma'
+                        onclick=" ,'"' ,"pegar_dados($cod_pessoa, '$nome')", '"' , ">Excluir</a>
                         </td>
                         
                       </tr>";
-              }
+                    }
             ?>
           </tbody>
         </table>
       </div>
     </div>
 
-    <!-- Modal -->
-<div class="modal fade" id="confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Confirmação de exclusão</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Deseja realmente excluir</p>
-        <p id="nome_pessoa">Nome da pessoas</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-        <button type="button" class="btn btn-danger">Sim</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-    <!-- Optional JavaScript; Bootstrap Bundle with Popper -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  window.jQuery || document.write('<script src="/caminho-local/jquery-3.6.0.min.js"><\/script>')
-</script>
+     <!-- Modal -->
+     <div class="modal fade" id="confirma" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmação de exclusão</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          <form action="excluir_script.php" method="POST">
+           <p>Deseja realmente excluir <b id="nome_pessoa"> </b>?</p>
+           <b id="nome_pessoa"> </b>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+              <input type="hidden" name="nome" id="nome_pessoa_1" value="">
+              <input type="hidden" name="id" id="cod_pessoa" value="">
+              <input type="submit" type="button" class="btn btn-danger" value="Sim">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>    
+    
+    <script type="text/javascript">
+      function pegar_dados (id, nome) {
+          document.getElementById('nome_pessoa').innerHTML = nome;
+          document.getElementById('nome_pessoa_1').value = nome;
+          document.getElementById('cod_pessoa').value = id;
+      }
 
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
   </body>
 </html>

@@ -18,6 +18,7 @@ Um sistema de **Cadastro de Usuários** (CRUD) em PHP que permite gerenciar info
 - **JavaScript**: Validação de formulários e confirmações de modais.
 - **Bootstrap**: Framework CSS para design responsivo.
 - **HTML5/CSS3**: Estrutura e estilo da interface.
+- **Git**: Controle de versão do código, utilizando branches para gerenciamento de funcionalidades e correções.
 
 ![forms de cadastro](https://github.com/user-attachments/assets/b1768d03-e649-4e07-8a0e-8d0db892f316)
 

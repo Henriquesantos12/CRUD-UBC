@@ -19,6 +19,9 @@ Um sistema de **Cadastro de Usuários** (CRUD) em PHP que permite gerenciar info
 - **Bootstrap**: Framework CSS para design responsivo.
 - **HTML5/CSS3**: Estrutura e estilo da interface.
 
+![Formulário de cadastro ](https://ibb.co/HzCTnv8)
+
+
 ## 🚀 Como Instalar
 
 1. **Clone o repositório**:

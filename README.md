@@ -1,4 +1,4 @@
-# 🚀 User Registration CRUD in PHP
+# 🚀 Projeto da Faculdade - User Registration CRUD in PHP
 
 Um sistema de **Cadastro de Usuários** (CRUD) em PHP que permite gerenciar informações de usuários com facilidade! 🌟
 
